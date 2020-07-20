@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <title>Stock Prices and Alerts</title>
+  </head>
+
+  <body>
+    <section class="hero is-small is-dark is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            InStock
+          </h1>
+          <h2 class="subtitle">
+            For your investment needs
+          </h2>
+        </div>
+      </div>
+    </section>
+    <br />
+    <section class="level">
+      <div class="level-item center">
+        <!-- Search Parameters Panel -->
+      </div>
+      <div class="level-item center">
+        <label for="search">Ticker Symbol:</label>
+        <!-- !-- Input field -->
+
+        <input
+          type="text"
+          class="input is-rounded"
+          id="search"
+          aria-label="search"
+        />
+      </div>
+
+      <!-- Search button -->
+      <div class="level-item center">
+        <button type="button" class="button is-dark is-rounded" id="searchBtn">
+          Search
+        </button>
+
+        <button
+          onclick="clearInput()"
+          id="clear"
+          type="button"
+          class="button is-dark is-rounded"
+        >
+          Clear
+        </button>
+      </div>
+    </section>
+
+    <!-- Indices container -->
+    <section class="section">
+      <div class="notification">
+        <p class="is-size-3">
+          Indices
+        </p>
+      </div>
+    </section>
+    <div class="columns is-tablet" id="indices-div"></div>
+
+    <!-- Cryptocurrency container -->
+    <section class="section">
+      <div class="notification">
+        <p class="is-size-3">
+          Cryptocurrencies
+        </p>
+      </div>
+    </section>
+
+    <div class="columns is-tablet" id="cryptos-div">
+      <!-- Cryptocurrency content -->
+    </div>
+
+    <!-- Search Result Modal -->
+    <div id="searchResultModal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title"></p>
+          <button
+            onclick="ToggleResultModal();"
+            class="delete"
+            aria-label="close"
+          ></button>
+        </header>
+        <section id="search-result-card" class="modal-card-body">
+          <div id="results-list">
+            <p id="results-open"></p>
+            <br />
+            <p id="results-close"></p>
+            <br />
+            <p id="results-volume"></p>
+            <canvas id="myChart"></canvas>
+          </div>
+        </section>
+        <footer class="modal-card-foot">
+          <button onclick="ToggleResultModal();" class="button is-dark">
+            Clear
+          </button>
+        </footer>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    /> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/tickers.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
