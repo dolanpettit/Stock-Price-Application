@@ -12,3 +12,5 @@ This application provides the user with the most recent price data available for
 </ul>
 
 <img src="./images/deployed.png">
+
+<img src="./images/mobile-response.png">
